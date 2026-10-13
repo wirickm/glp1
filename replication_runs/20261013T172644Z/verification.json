@@ -1,0 +1,9 @@
+{
+  "pipeline_tests": "6 passed",
+  "rebuilt_artifacts_byte_identical": 4,
+  "comparison_ndcs": 73,
+  "all_identical": true,
+  "covered_input_rows": 49,
+  "input_rows": 68,
+  "committed_changes_only_additions_in_run": true
+}
