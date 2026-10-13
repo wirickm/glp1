@@ -1,0 +1,169 @@
+{
+ "queries": {
+  "M001": {
+   "query_id": "M001",
+   "query_sent": "ZEPBOUND",
+   "attempts": 1,
+   "status": "results",
+   "retrieved_at_utc": "2026-10-13T13:58:52.463Z",
+   "row_count": 12,
+   "evidence_file": "checkpoints/pass2/evidence/M001_a1.json",
+   "match_summary": "rows_returned",
+   "last_failure_reasons": []
+  },
+  "M002": {
+   "query_id": "M002",
+   "query_sent": "RYBELSUS",
+   "attempts": 1,
+   "status": "results",
+   "retrieved_at_utc": "2026-10-13T14:00:07.424Z",
+   "row_count": 6,
+   "evidence_file": "checkpoints/pass2/evidence/M002_a1.json",
+   "match_summary": "rows_returned",
+   "last_failure_reasons": []
+  },
+  "M003": {
+   "query_id": "M003",
+   "query_sent": "BYDUREON BCISE",
+   "attempts": 1,
+   "status": "results",
+   "retrieved_at_utc": "2026-10-13T14:00:42.648Z",
+   "row_count": 1,
+   "evidence_file": "checkpoints/pass2/evidence/M003_a1.json",
+   "match_summary": "rows_returned",
+   "last_failure_reasons": []
+  },
+  "M004": {
+   "query_id": "M004",
+   "query_sent": "OZEMPIC",
+   "attempts": 1,
+   "status": "results",
+   "retrieved_at_utc": "2026-10-13T14:01:09.015Z",
+   "row_count": 8,
+   "evidence_file": "checkpoints/pass2/evidence/M004_a1.json",
+   "match_summary": "rows_returned",
+   "last_failure_reasons": []
+  },
+  "M005": {
+   "query_id": "M005",
+   "query_sent": "WEGOVY",
+   "attempts": 1,
+   "status": "results",
+   "retrieved_at_utc": "2026-10-13T14:01:44.771Z",
+   "row_count": 10,
+   "evidence_file": "checkpoints/pass2/evidence/M005_a1.json",
+   "match_summary": "rows_returned",
+   "last_failure_reasons": []
+  },
+  "M006": {
+   "query_id": "M006",
+   "query_sent": "MOUNJARO",
+   "attempts": 1,
+   "status": "results",
+   "retrieved_at_utc": "2026-10-13T14:02:36.043Z",
+   "row_count": 6,
+   "evidence_file": "checkpoints/pass2/evidence/M006_a1.json",
+   "match_summary": "rows_returned",
+   "last_failure_reasons": []
+  },
+  "M007": {
+   "query_id": "M007",
+   "query_sent": "TRULICITY",
+   "attempts": 1,
+   "status": "results",
+   "retrieved_at_utc": "2026-10-13T14:02:47.996Z",
+   "row_count": 4,
+   "evidence_file": "checkpoints/pass2/evidence/M007_a1.json",
+   "match_summary": "rows_returned",
+   "last_failure_reasons": []
+  },
+  "M008": {
+   "query_id": "M008",
+   "query_sent": "SOLIQUA 100-33",
+   "attempts": 1,
+   "status": "no_results",
+   "retrieved_at_utc": "2026-10-13T14:03:29.102Z",
+   "row_count": 0,
+   "evidence_file": "checkpoints/pass2/evidence/M008_a1.json",
+   "match_summary": "no_results",
+   "last_failure_reasons": []
+  },
+  "M009": {
+   "query_id": "M009",
+   "query_sent": "SAXENDA",
+   "attempts": 1,
+   "status": "results",
+   "retrieved_at_utc": "2026-10-13T14:04:14.935Z",
+   "row_count": 1,
+   "evidence_file": "checkpoints/pass2/evidence/M009_a1.json",
+   "match_summary": "rows_returned",
+   "last_failure_reasons": []
+  },
+  "M010": {
+   "query_id": "M010",
+   "query_sent": "VICTOZA 3-PAK",
+   "attempts": 1,
+   "status": "no_results",
+   "retrieved_at_utc": "2026-10-13T14:04:20.973Z",
+   "row_count": 0,
+   "evidence_file": "checkpoints/pass2/evidence/M010_a1.json",
+   "match_summary": "no_results",
+   "last_failure_reasons": []
+  },
+  "M011": {
+   "query_id": "M011",
+   "query_sent": "BYETTA",
+   "attempts": 1,
+   "status": "results",
+   "retrieved_at_utc": "2026-10-13T14:04:23.296Z",
+   "row_count": 4,
+   "evidence_file": "checkpoints/pass2/evidence/M011_a1.json",
+   "match_summary": "rows_returned",
+   "last_failure_reasons": []
+  },
+  "M012": {
+   "query_id": "M012",
+   "query_sent": "LIRAGLUTIDE",
+   "attempts": 1,
+   "status": "results",
+   "retrieved_at_utc": "2026-10-13T14:05:04.850Z",
+   "row_count": 21,
+   "evidence_file": "checkpoints/pass2/evidence/M012_a1.json",
+   "match_summary": "rows_returned",
+   "last_failure_reasons": []
+  },
+  "M013": {
+   "query_id": "M013",
+   "query_sent": "XULTOPHY 100-3.6",
+   "attempts": 1,
+   "status": "no_results",
+   "retrieved_at_utc": "2026-10-13T14:06:57.787Z",
+   "row_count": 0,
+   "evidence_file": "checkpoints/pass2/evidence/M013_a1.json",
+   "match_summary": "no_results",
+   "last_failure_reasons": []
+  },
+  "M014": {
+   "query_id": "M014",
+   "query_sent": "WEGOVY HD",
+   "attempts": 1,
+   "status": "no_results",
+   "retrieved_at_utc": "2026-10-13T14:07:04.451Z",
+   "row_count": 0,
+   "evidence_file": "checkpoints/pass2/evidence/M014_a1.json",
+   "match_summary": "no_results",
+   "last_failure_reasons": []
+  },
+  "M015": {
+   "query_id": "M015",
+   "query_sent": "VICTOZA 2-PAK",
+   "attempts": 1,
+   "status": "no_results",
+   "retrieved_at_utc": "2026-10-13T14:07:06.855Z",
+   "row_count": 0,
+   "evidence_file": "checkpoints/pass2/evidence/M015_a1.json",
+   "match_summary": "no_results",
+   "last_failure_reasons": []
+  }
+ }
+}

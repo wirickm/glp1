@@ -1,0 +1,40 @@
+input rows 68 unique ndc 68 unique names 15
+captures verified 83 of 83
+ndc queries with terminal evidence 68 missing set() extra set()
+name queries with terminal evidence 15 missing set() extra set()
+last NDC retrieval 2026-10-13T13:55:23.083Z last NDC attempt recorded 2026-10-13T13:55:47Z first name retrieval 2026-10-13T13:58:52.463Z first name attempt 2026-10-13T13:58:52.463Z
+raw rows 132 pass1 59 pass2 73
+segment formats {'4-4-2': 118, '5-3-2': 14}
+distinct ndcs 73 ndcs with differing values across queries 0
+ndcs with >1 distinct source description []
+pricing_results rows 73 distinct ndc 73 empty ndc 0
+final csv: LF | no BOM | ascii
+input ndcs present 49 absent 19 final ndcs not in input 24
+no-result NDC queries 19 ['00002015204', '00002143301', '00002143401', '00002145701', '00002146001', '00002147101', '00002148401', '00002149501', '00002150601', '00002223601', '00002245701', '00002246001', '00002247101', '00002248401', '00002249501', '00002250601', '00002318201', '00169413001', '00169477211']
+no-result name queries 5 ['SOLIQUA 100-33', 'VICTOZA 2-PAK', 'VICTOZA 3-PAK', 'WEGOVY HD', 'XULTOPHY 100-3.6']
+distinct p1 49 distinct p2 72 p2 new 24 p2 already 48 p1 only 1
+p1-only ndcs ['0024-5761-05']
+queries with results: ndc 49 name 10
+duplicate rows removed 59
+lookup_log rows 157 Counter({'results': 132, 'no_results': 24, 'failed': 1})
+unmatched_failed rows 44 Counter({'no_results': 24, 'input_ndc_absent_from_final': 19, 'failed_attempt': 1})
+OK  input_rows summary= 68 mine= 68
+OK  unique_ndc_queries summary= 68 mine= 68
+OK  unique_name_queries summary= 15 mine= 15
+OK  raw_result_rows summary= {'pass1_ndc': 59, 'pass2_name': 73, 'total': 132} mine= {'pass1_ndc': 59, 'pass2_name': 73, 'total': 132}
+OK  queries_with_results summary= {'pass1_ndc': 49, 'pass2_name': 10} mine= {'pass1_ndc': 49, 'pass2_name': 10}
+OK  no_result_queries summary= {'pass1_ndc': 19, 'pass2_name': 5} mine= {'pass1_ndc': 19, 'pass2_name': 5}
+OK  failed_queries_final summary= {'pass1_ndc': 0, 'pass2_name': 0} mine= {'pass1_ndc': 0, 'pass2_name': 0}
+OK  failed_attempts summary= {'pass1_ndc': 1, 'pass2_name': 0} mine= {'pass1_ndc': 1, 'pass2_name': 0}
+OK  duplicate_rows_removed summary= 59 mine= 59
+OK  final_unique_ndcs summary= 73 mine= 73
+OK  distinct_ndcs_pass1 summary= 49 mine= 49
+OK  distinct_ndcs_pass2 summary= 72 mine= 72
+OK  pass2_ndcs_new_vs_pass1 summary= 24 mine= 24
+OK  pass2_ndcs_already_in_pass1 summary= 48 mine= 48
+OK  final_ndcs_not_in_input_ndc_list summary= 24 mine= 24
+OK  input_ndcs_present_in_final summary= 49 mine= 49
+OK  input_ndcs_absent_from_final summary= 19 mine= 19
+OK  conflicts summary= 0 mine= 0
+
+PROBLEMS: 0

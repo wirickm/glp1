@@ -1,0 +1,27 @@
+{
+  "input_file": "/mnt/user-data/uploads/ndc-data.csv",
+  "input_sha256": "49b038a713aa597c61685635fc1eae9bd47afdf335eb58d81023b5f2d78d6d03",
+  "input_data_rows": 68,
+  "unique_ndcs": 68,
+  "unique_names": 15,
+  "flagged_ndcs": 0,
+  "duplicate_ndc_values": {},
+  "rows_changed_by_trim": 0,
+  "names_with_row_counts": {
+    "ZEPBOUND": 13,
+    "RYBELSUS": 6,
+    "BYDUREON BCISE": 1,
+    "OZEMPIC": 9,
+    "WEGOVY": 9,
+    "MOUNJARO": 12,
+    "TRULICITY": 8,
+    "SOLIQUA 100-33": 1,
+    "SAXENDA": 1,
+    "VICTOZA 3-PAK": 1,
+    "BYETTA": 2,
+    "LIRAGLUTIDE": 2,
+    "XULTOPHY 100-3.6": 1,
+    "WEGOVY HD": 1,
+    "VICTOZA 2-PAK": 1
+  }
+}

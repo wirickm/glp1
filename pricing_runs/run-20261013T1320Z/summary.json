@@ -1,0 +1,74 @@
+{
+  "run_id": "run-20261013T1320Z",
+  "run_start_utc": "2026-10-13T13:21:53Z",
+  "pass1_start_utc": "2026-10-13T13:33:23Z",
+  "pass1_end_utc": "2026-10-13T13:56:52Z",
+  "pass2_start_utc": "2026-10-13T13:58:19Z",
+  "pass2_end_utc": "2026-10-13T14:07:46Z",
+  "phase4_built_utc": "2026-10-13T14:08:38Z",
+  "input_rows": 68,
+  "unique_ndc_queries": 68,
+  "unique_name_queries": 15,
+  "raw_result_rows": {
+    "pass1_ndc": 59,
+    "pass2_name": 73,
+    "total": 132
+  },
+  "queries_with_results": {
+    "pass1_ndc": 49,
+    "pass2_name": 10
+  },
+  "no_result_queries": {
+    "pass1_ndc": 19,
+    "pass2_name": 5
+  },
+  "failed_queries_final": {
+    "pass1_ndc": 0,
+    "pass2_name": 0
+  },
+  "failed_attempts": {
+    "pass1_ndc": 1,
+    "pass2_name": 0
+  },
+  "duplicate_rows_removed": 59,
+  "final_unique_ndcs": 73,
+  "check_raw_minus_duplicates_equals_final": true,
+  "distinct_ndcs_pass1": 49,
+  "distinct_ndcs_pass2": 72,
+  "pass2_ndcs_new_vs_pass1": 24,
+  "pass2_ndcs_already_in_pass1": 48,
+  "final_ndcs_not_in_input_ndc_list": [
+    "0002-3511-11",
+    "0002-3522-11",
+    "0002-3533-11",
+    "0002-3544-11",
+    "0002-3555-11",
+    "0002-3566-11",
+    "0143-9144-02",
+    "0143-9144-03",
+    "0169-4136-02",
+    "0480-7250-46",
+    "66780-210-07",
+    "66780-212-01",
+    "69097-910-55",
+    "69097-920-67",
+    "69097-920-68",
+    "70377-094-52",
+    "70377-094-53",
+    "70377-095-53",
+    "70748-346-02",
+    "70748-346-03",
+    "71288-563-84",
+    "71288-563-85",
+    "72603-745-02",
+    "72603-745-03"
+  ],
+  "input_ndcs_present_in_final": 49,
+  "input_ndcs_absent_from_final": 19,
+  "conflicts": 0,
+  "resolved_by_newest_effective_date": [],
+  "dedup_rule": "Key = displayed package NDC text (hyphenated as shown, kept as text). Rows identical in all seven output fields collapse to one. If an NDC's rows differ, the rows with the newest Effective Date are kept only if all rows at that date are identical; otherwise the NDC goes to conflicts.csv with every competing record and no winner is picked.",
+  "description_rule": "NDC Package Description is the rendered (displayed) text; the source text with a double space is kept in the evidence files.",
+  "matching_rule_ndc_queries": "displayed NDC zero-padded segment-wise to 5-4-2 and compared with the 11-digit input",
+  "name_query_rows": "recorded with the site's displayed group heading only; not labelled as matches for the input drug"
+}
