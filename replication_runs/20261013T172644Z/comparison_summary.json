@@ -1,0 +1,62 @@
+{
+  "blind_commit": "d518d75112d31dc8837ed9d1f3e6a78ec4f7034a",
+  "reference_commit": "917abba64f2ae4673b364b39e14badaf1b0f073c",
+  "reference_rows": 73,
+  "replication_rows": 73,
+  "counts": {
+    "identical": 73,
+    "changed_newer_data": 0,
+    "discrepancy": 0,
+    "reference_only": 0,
+    "replication_only": 0
+  },
+  "input_rows": 68,
+  "unique_input_ndcs": 68,
+  "covered_input_rows": 49,
+  "covered_unique_input_ndcs": 49,
+  "uncovered_input_rows": 19,
+  "uncovered_only_mentioned_in_descriptions": 18,
+  "source_sha256": {
+    "pricing_results.csv": "70f29a74d903e0f9a4cfb02f5777e7f0219d4d0f3bad097c415b657d5977c6ec",
+    "pricing_runs/run-20261013T1320Z/checkpoints/input_rows.csv": "f352c6fc10bc41ae095cc93bd785af8bbe09fac6b28892261ac1e6ce78a770fc"
+  },
+  "query_instances": 20,
+  "attempts": 24,
+  "failed_attempts": 4,
+  "final_outcomes": {
+    "results": 15,
+    "confirmed no results": 5
+  },
+  "variants": [
+    {
+      "original_name": "SOLIQUA 100-33",
+      "query": "SOLIQUA",
+      "outcome": "results",
+      "rows_returned": 1
+    },
+    {
+      "original_name": "VICTOZA 3-PAK",
+      "query": "VICTOZA",
+      "outcome": "results",
+      "rows_returned": 2
+    },
+    {
+      "original_name": "XULTOPHY 100-3.6",
+      "query": "XULTOPHY",
+      "outcome": "results",
+      "rows_returned": 1
+    },
+    {
+      "original_name": "WEGOVY HD",
+      "query": "WEGOVY",
+      "outcome": "results",
+      "rows_returned": 10
+    },
+    {
+      "original_name": "VICTOZA 2-PAK",
+      "query": "VICTOZA",
+      "outcome": "results",
+      "rows_returned": 2
+    }
+  ]
+}

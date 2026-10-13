@@ -1,0 +1,7 @@
+The existing pricing dataset was collected through both NDC and drug-name searches. This run independently searched only the 15 specified names and five required stripped variants, then froze the raw captures and generated CSVs in commit d518d75112d31dc8837ed9d1f3e6a78ec4f7034a before reading the reference.
+
+All 73 reference NDCs are reproduced exactly across the seven displayed columns: 73 identical, zero date drift, discrepancies, reference-only, or replication-only rows. Original-input coverage is 49/68 (72.06%); 18 of the 19 uncovered identifiers appear within package descriptions rather than as standalone pricing rows.
+
+The run includes timestamped raw captures, schema observations, reproducible collection and comparison scripts, query and conflict logs, exhaustive comparison CSVs, input coverage, and a report. Twenty query instances required 24 attempts; four failed attempts were retried once, five exact names confirmed no results, and all required variants returned data. There are no unresolved query failures or duplicate conflicts. No NDC searches or pricing-detail routes were used; the known-bad root CSV was never read.
+
+Validation: all six processing tests passed, all four generated blind artifacts rebuilt byte-identically, raw hashes and frozen Git blobs were checked, comparison buckets reconcile to both datasets, and all committed changes are additions within replication_runs/20261013T172644Z/.
