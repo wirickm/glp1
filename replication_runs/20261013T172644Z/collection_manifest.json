@@ -1,0 +1,265 @@
+{
+  "original_names": 15,
+  "query_instances": 20,
+  "distinct_query_strings": 18,
+  "attempts": 24,
+  "failed_attempts": 4,
+  "final_outcomes": {
+    "results": 15,
+    "confirmed no results": 5
+  },
+  "captured_data_rows": 89,
+  "unique_ndcs": 73,
+  "conflicting_ndcs": 0,
+  "variants": [
+    {
+      "original_name": "SOLIQUA 100-33",
+      "query": "SOLIQUA",
+      "outcome": "results",
+      "rows_returned": 1
+    },
+    {
+      "original_name": "VICTOZA 3-PAK",
+      "query": "VICTOZA",
+      "outcome": "results",
+      "rows_returned": 2
+    },
+    {
+      "original_name": "XULTOPHY 100-3.6",
+      "query": "XULTOPHY",
+      "outcome": "results",
+      "rows_returned": 1
+    },
+    {
+      "original_name": "WEGOVY HD",
+      "query": "WEGOVY",
+      "outcome": "results",
+      "rows_returned": 10
+    },
+    {
+      "original_name": "VICTOZA 2-PAK",
+      "query": "VICTOZA",
+      "outcome": "results",
+      "rows_returned": 2
+    }
+  ],
+  "captures": [
+    {
+      "path": "raw/01-ZEPBOUND.json",
+      "sha256": "ef9d5eeafa6ae119d12c6d0166b9b6b07dcbb3717039d97aaa9e1e8ab47bb2fb",
+      "query": "ZEPBOUND",
+      "original_name": null,
+      "outcome": "results",
+      "rows_returned": 12,
+      "retrieved_at_utc": "2026-10-13T17:28:04.478Z"
+    },
+    {
+      "path": "raw/02-RYBELSUS.json",
+      "sha256": "b56a3c9ce124f14e4055d852944a3b9bc33eb80439fa6712ed2ba5d1e2b9893d",
+      "query": "RYBELSUS",
+      "original_name": null,
+      "outcome": "results",
+      "rows_returned": 6,
+      "retrieved_at_utc": "2026-10-13T17:29:02.754Z"
+    },
+    {
+      "path": "raw/03-BYDUREON_BCISE.json",
+      "sha256": "e0b840dbfadfa463452cd9455c9db2126dbf9d57225a9aa1336d2a5d4055f476",
+      "query": "BYDUREON BCISE",
+      "original_name": null,
+      "outcome": "results",
+      "rows_returned": 1,
+      "retrieved_at_utc": "2026-10-13T17:29:10.908Z"
+    },
+    {
+      "path": "raw/04-OZEMPIC.json",
+      "sha256": "37f3de337ee510670b3c722e786efb6e3e6d9afbe05bef690c6c8b9cde7489e7",
+      "query": "OZEMPIC",
+      "original_name": null,
+      "outcome": "results",
+      "rows_returned": 8,
+      "retrieved_at_utc": "2026-10-13T17:29:12.696Z"
+    },
+    {
+      "path": "raw/05-WEGOVY.json",
+      "sha256": "4fc29a1c04f564b06634fe28d800131a85076cce49eae9947e4434b4fbf88741",
+      "query": "WEGOVY",
+      "original_name": null,
+      "outcome": "results",
+      "rows_returned": 10,
+      "retrieved_at_utc": "2026-10-13T17:29:14.518Z"
+    },
+    {
+      "path": "raw/06-MOUNJARO.json",
+      "sha256": "85256845695a8f5300814f5b916d6e94ddaf9b2ad44aa0d771848d6d82ed5b69",
+      "query": "MOUNJARO",
+      "original_name": null,
+      "outcome": "results",
+      "rows_returned": 6,
+      "retrieved_at_utc": "2026-10-13T17:29:23.262Z"
+    },
+    {
+      "path": "raw/07-TRULICITY.json",
+      "sha256": "8a26f57d01f4d6e0ba84efb4475ec6c35e54c2bd660d0efa18e4ed8681e4c838",
+      "query": "TRULICITY",
+      "original_name": null,
+      "outcome": "results",
+      "rows_returned": 4,
+      "retrieved_at_utc": "2026-10-13T17:29:25.049Z"
+    },
+    {
+      "path": "raw/08-SOLIQUA_100-33-failed.json",
+      "sha256": "444edf69794dd671e1e69bab6c6d08d8e336cd73361f7ca9826429e7e58b9d1c",
+      "query": "SOLIQUA 100-33",
+      "original_name": null,
+      "outcome": "failed",
+      "rows_returned": 0,
+      "retrieved_at_utc": "2026-10-13T17:30:10.493Z"
+    },
+    {
+      "path": "raw/09-SOLIQUA_100-33.json",
+      "sha256": "c97961ec1c0e7411173bba5b4e7ac5cfcff302eb0c3ae4b38b4f31fea9a9ad52",
+      "query": "SOLIQUA 100-33",
+      "original_name": null,
+      "outcome": "confirmed no results",
+      "rows_returned": 0,
+      "retrieved_at_utc": "2026-10-13T17:30:30.601Z"
+    },
+    {
+      "path": "raw/10-SOLIQUA.json",
+      "sha256": "822ccebea425e0b8d081445d2b6860010fde21efd8e81337b78c7eb1309bf479",
+      "query": "SOLIQUA",
+      "original_name": "SOLIQUA 100-33",
+      "outcome": "results",
+      "rows_returned": 1,
+      "retrieved_at_utc": "2026-10-13T17:30:32.584Z"
+    },
+    {
+      "path": "raw/11-SAXENDA.json",
+      "sha256": "9808eb4260782392e10ceb33b91850e70aa8d4dfb60a4914f06e4dc2457b5692",
+      "query": "SAXENDA",
+      "original_name": null,
+      "outcome": "results",
+      "rows_returned": 1,
+      "retrieved_at_utc": "2026-10-13T17:30:34.397Z"
+    },
+    {
+      "path": "raw/12-VICTOZA_3-PAK-failed.json",
+      "sha256": "10c57d3c460bb7caed8e0520980a84ad0ec3d8b4463c6ab07b7994f4bb9e50d1",
+      "query": "VICTOZA 3-PAK",
+      "original_name": null,
+      "outcome": "failed",
+      "rows_returned": 0,
+      "retrieved_at_utc": "2026-10-13T17:30:53.665Z"
+    },
+    {
+      "path": "raw/13-VICTOZA_3-PAK.json",
+      "sha256": "1aa17a81ab644e62cd9884a2d9bc4c0543712891993f01bab2aaabb32dce2d6a",
+      "query": "VICTOZA 3-PAK",
+      "original_name": null,
+      "outcome": "confirmed no results",
+      "rows_returned": 0,
+      "retrieved_at_utc": "2026-10-13T17:31:06.365Z"
+    },
+    {
+      "path": "raw/14-VICTOZA.json",
+      "sha256": "f3f4606af13d5ec9763f925c93d20fb49ae4af80c96c8b9cf3fc5de80b1ec298",
+      "query": "VICTOZA",
+      "original_name": "VICTOZA 3-PAK",
+      "outcome": "results",
+      "rows_returned": 2,
+      "retrieved_at_utc": "2026-10-13T17:31:08.197Z"
+    },
+    {
+      "path": "raw/15-BYETTA.json",
+      "sha256": "d34b2c9bd0d866795a0b2d1c2aeaa15511a0b97a474732a99916bdfd3e7e629c",
+      "query": "BYETTA",
+      "original_name": null,
+      "outcome": "results",
+      "rows_returned": 4,
+      "retrieved_at_utc": "2026-10-13T17:31:09.997Z"
+    },
+    {
+      "path": "raw/16-LIRAGLUTIDE.json",
+      "sha256": "29cfe538e80c6a8b9c70d918bb335f5ae849cf2a88b4ae0f110b4b4c3e8847ec",
+      "query": "LIRAGLUTIDE",
+      "original_name": null,
+      "outcome": "results",
+      "rows_returned": 21,
+      "retrieved_at_utc": "2026-10-13T17:31:11.865Z"
+    },
+    {
+      "path": "raw/17-XULTOPHY_100-3.6.json",
+      "sha256": "47d4bb9e60cc2f1a9b9af4096cc4a569131b290f5432cb5c50a8280549740856",
+      "query": "XULTOPHY 100-3.6",
+      "original_name": null,
+      "outcome": "confirmed no results",
+      "rows_returned": 0,
+      "retrieved_at_utc": "2026-10-13T17:31:22.189Z"
+    },
+    {
+      "path": "raw/18-WEGOVY_HD-failed.json",
+      "sha256": "5546ad9329ffd83e73a173a41ec9d4e6fefd70eb8bf4cf6acf003bb586debf68",
+      "query": "WEGOVY HD",
+      "original_name": null,
+      "outcome": "failed",
+      "rows_returned": 0,
+      "retrieved_at_utc": "2026-10-13T17:31:39.120Z"
+    },
+    {
+      "path": "raw/19-XULTOPHY.json",
+      "sha256": "b784eca9506a422fe49e47329c5806b8e5caa67a7791b191bbc26b25b623a720",
+      "query": "XULTOPHY",
+      "original_name": "XULTOPHY 100-3.6",
+      "outcome": "results",
+      "rows_returned": 1,
+      "retrieved_at_utc": "2026-10-13T17:31:43.256Z"
+    },
+    {
+      "path": "raw/20-WEGOVY_HD.json",
+      "sha256": "8a247e3fcecdbe632fce666ac1e46ace62560a174658c19ee6a208a430ca23bc",
+      "query": "WEGOVY HD",
+      "original_name": null,
+      "outcome": "confirmed no results",
+      "rows_returned": 0,
+      "retrieved_at_utc": "2026-10-13T17:31:44.955Z"
+    },
+    {
+      "path": "raw/21-WEGOVY.json",
+      "sha256": "3e33797b97f38caae7c0b8da6f07aa3c3f5410ea645368bdb946ad90d91d0e85",
+      "query": "WEGOVY",
+      "original_name": "WEGOVY HD",
+      "outcome": "results",
+      "rows_returned": 10,
+      "retrieved_at_utc": "2026-10-13T17:31:55.736Z"
+    },
+    {
+      "path": "raw/22-VICTOZA_2-PAK-failed.json",
+      "sha256": "e8cc693f7fecae0ed27965b29398631279090238632291f86627867e7b06343b",
+      "query": "VICTOZA 2-PAK",
+      "original_name": null,
+      "outcome": "failed",
+      "rows_returned": 0,
+      "retrieved_at_utc": "2026-10-13T17:32:12.016Z"
+    },
+    {
+      "path": "raw/23-VICTOZA_2-PAK.json",
+      "sha256": "93fe7e480eb7d5b143a19b12dfaa1af938135a0b97bb936e0edcfd9f5002e43f",
+      "query": "VICTOZA 2-PAK",
+      "original_name": null,
+      "outcome": "confirmed no results",
+      "rows_returned": 0,
+      "retrieved_at_utc": "2026-10-13T17:32:13.874Z"
+    },
+    {
+      "path": "raw/24-VICTOZA.json",
+      "sha256": "96a5a893c9b6d8e51dd8077d767325c56454c76a16e882b0cd74bb59630eb990",
+      "query": "VICTOZA",
+      "original_name": "VICTOZA 2-PAK",
+      "outcome": "results",
+      "rows_returned": 2,
+      "retrieved_at_utc": "2026-10-13T17:32:24.132Z"
+    }
+  ],
+  "conflict_policy": "Same-date conflicts are all listed; first-captured representative retained and never treated as resolved."
+}
