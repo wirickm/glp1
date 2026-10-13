@@ -1,0 +1,112 @@
+{
+ "pass": "pass1_ndc",
+ "pass1_start_utc": "2026-10-13T13:33:23Z",
+ "first_retrieval_utc": "2026-10-13T13:33:56.874Z",
+ "last_retrieval_utc": "2026-10-13T13:55:23.083Z",
+ "unique_ndc_queries": 68,
+ "classification_counts": {
+  "results": 49,
+  "no_results": 19
+ },
+ "match_counts": {
+  "exact_match": 49,
+  "no_results": 19
+ },
+ "queries_exact_match_with_sibling_rows": 10,
+ "attempts_total": 69,
+ "failed_attempts": [
+  {
+   "query_id": "N065",
+   "attempt": "1",
+   "reasons": "LOAD_FAILURE: browser error page 'This site can't be reached / ndclist.com unexpectedly closed the connection / ERR_CONNECTION_CLOSED' at 2026-10-13T13:53Z (origin null, no results table); sessionStorage access denied on error page"
+  }
+ ],
+ "raw_rows_collected": 59,
+ "distinct_returned_ndcs": 49,
+ "ndcs_returned_by_multiple_queries": {
+  "0169-4303-13": [
+   "N002",
+   "N009"
+  ],
+  "0169-4303-30": [
+   "N002",
+   "N009"
+  ],
+  "0169-4307-13": [
+   "N008",
+   "N061"
+  ],
+  "0169-4307-30": [
+   "N008",
+   "N061"
+  ],
+  "0169-4060-12": [
+   "N018",
+   "N068"
+  ],
+  "0169-4060-13": [
+   "N018",
+   "N068"
+  ],
+  "0480-3667-20": [
+   "N039",
+   "N051"
+  ],
+  "0480-3667-22": [
+   "N039",
+   "N051"
+  ],
+  "0169-4314-13": [
+   "N044",
+   "N048"
+  ],
+  "0169-4314-30": [
+   "N044",
+   "N048"
+  ]
+ },
+ "ndcs_with_differing_values_across_queries": {},
+ "rows_matching_input_ndc": 49,
+ "rows_not_matching_input_ndc": 10,
+ "format_findings": {
+  "desc_source_eq_rendered": 13
+ },
+ "status_values": {
+  "ACTIVE": 57,
+  "": 2
+ },
+ "unit_values": {
+  "ML": 40,
+  "EA": 19
+ },
+ "effective_dates": {
+  "09-23-2026": 49,
+  "04-23-2025": 1,
+  "01-01-2025": 7,
+  "02-19-2025": 2
+ },
+ "captures_reverified": 68,
+ "audit_problems": [],
+ "no_result_queries": [
+  "N010",
+  "N014",
+  "N019",
+  "N021",
+  "N025",
+  "N026",
+  "N032",
+  "N033",
+  "N035",
+  "N040",
+  "N043",
+  "N045",
+  "N047",
+  "N054",
+  "N055",
+  "N056",
+  "N059",
+  "N064",
+  "N065"
+ ],
+ "failed_queries_final": []
+}

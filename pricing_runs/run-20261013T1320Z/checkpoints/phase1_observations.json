@@ -1,0 +1,111 @@
+{
+  "note": "Phase 1 probe observations. All except OZEMPIC were read through summary scripts and transcribed manually; NOT hash-verified and NOT to be used as result data.",
+  "observations": [
+    {
+      "query": "Loteprednol",
+      "type": "name",
+      "srf": "Search results for Loteprednol",
+      "rows": 47,
+      "distinct_ndcs": 47,
+      "groups": 30,
+      "note": "schema probe; summary only"
+    },
+    {
+      "query": "0574-4135-05",
+      "type": "ndc",
+      "srf": "Search results for 0574-4135-05",
+      "rows": 3,
+      "ndcs": [
+        "0574-4135-05",
+        "0574-4135-10",
+        "0574-4135-15"
+      ]
+    },
+    {
+      "query": "00002250680",
+      "type": "ndc_raw11",
+      "rows": 1,
+      "ndcs": [
+        "0002-2506-80"
+      ]
+    },
+    {
+      "query": "00002-2506-80",
+      "type": "ndc_542",
+      "rows": 1,
+      "ndcs": [
+        "0002-2506-80"
+      ]
+    },
+    {
+      "query": "00169418113",
+      "type": "ndc_raw11",
+      "rows": 1,
+      "ndcs": [
+        "0169-4181-13"
+      ]
+    },
+    {
+      "query": "00169-4181-13",
+      "type": "ndc_542",
+      "rows": 1,
+      "ndcs": [
+        "0169-4181-13"
+      ]
+    },
+    {
+      "query": "00310654004",
+      "type": "ndc_raw11",
+      "rows": 1,
+      "ndcs": [
+        "0310-6540-04"
+      ]
+    },
+    {
+      "query": "00310-6540-04",
+      "type": "ndc_542",
+      "rows": 1,
+      "ndcs": [
+        "0310-6540-04"
+      ]
+    },
+    {
+      "query": "00574413505",
+      "type": "ndc_raw11",
+      "rows": 3,
+      "ndcs": [
+        "0574-4135-05",
+        "0574-4135-10",
+        "0574-4135-15"
+      ]
+    },
+    {
+      "query": "99999999999",
+      "type": "control",
+      "rows": 0,
+      "page": "no table; 'No results found'"
+    },
+    {
+      "query": "insulin",
+      "type": "cap_probe",
+      "rows": 363
+    },
+    {
+      "query": "sodium",
+      "type": "cap_probe",
+      "rows": 309
+    },
+    {
+      "query": "VICTOZA 2-PAK",
+      "type": "name_preview",
+      "rows": null,
+      "page": "no table; no-results text not checked"
+    },
+    {
+      "query": "OZEMPIC",
+      "type": "integrity_test",
+      "rows": 8,
+      "evidence": "checkpoints/phase1_integrity_test/verified_OZEMPIC.json"
+    }
+  ]
+}
