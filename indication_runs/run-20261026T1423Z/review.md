@@ -4,9 +4,9 @@
 
 ## Method
 - Re-hashed every saved XML with SHA-256 under `workers/*/spl/` and `reviewer/spl/`. All match the reported hashes.
-- Ran my own parser (`/private/tmp/claude-501/-Users-michaelwirick-Documents-New-project-04162026-SANITY-CHECK-THP-ON-FOREIGN/e7b02304-f46d-4d00-8ca4-1024c893a519/scratchpad/glp1/audit_scripts/audit.py`) over all 73 worker rows. Per row it checks: file exists; hash; setId, versionNumber and effectiveTime against the reported values; the package NDC appears literally; the NDC sits in a product's package codes; the application number equals that product's `approval/id@extension`; and each "..."-separated part of the quote appears in the LOINC 34067-9 section text.
+- Ran my own parser (`audit_scripts/audit.py`) over all 73 worker rows. Per row it checks: file exists; hash; setId, versionNumber and effectiveTime against the reported values; the package NDC appears literally; the NDC sits in a product's package codes; the application number equals that product's `approval/id@extension`; and each "..."-separated part of the quote appears in the LOINC 34067-9 section text.
 - Printed the full Section 1 of all 23 distinct labels to check the categories and look for any "Both".
-- Re-queried live: DailyMed `spls.json?ndc=`, `spls/<setid>.xml`, `spls/<setid>/history.json`, and RxNav `ndcproperties` (ndcstatus=all) and `ndcstatus`. Responses are saved in `/private/tmp/claude-501/-Users-michaelwirick-Documents-New-project-04162026-SANITY-CHECK-THP-ON-FOREIGN/e7b02304-f46d-4d00-8ca4-1024c893a519/scratchpad/glp1/audit_dl/`.
+- Re-queried live: DailyMed `spls.json?ndc=`, `spls/<setid>.xml`, `spls/<setid>/history.json`, and RxNav `ndcproperties` (ndcstatus=all) and `ndcstatus`. Responses are saved in `audit_dl/`.
 - Confirmed the worker CSV covers exactly the 73 manifest NDCs.
 
 ## Check 1: Disagreements
