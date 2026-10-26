@@ -1,0 +1,642 @@
+{
+ "order": [
+  "0002-1433-80",
+  "0002-1471-80",
+  "0002-2236-80",
+  "0002-2484-80",
+  "0002-3511-11",
+  "0002-3555-11",
+  "0143-9144-03",
+  "0169-2800-15",
+  "0169-4130-13",
+  "0169-4303-13",
+  "0169-4314-13",
+  "0169-4415-31",
+  "0169-4517-14",
+  "0169-4772-12",
+  "0480-3667-20",
+  "66780-212-01",
+  "70377-094-52",
+  "70748-346-03",
+  "72603-745-03",
+  "0002-1434-80",
+  "0002-1484-80",
+  "0002-2457-80",
+  "0002-2495-80",
+  "0002-3522-11",
+  "0002-3566-11",
+  "0169-1704-30",
+  "0169-2911-15",
+  "0169-4132-12",
+  "0169-4303-30",
+  "0169-4314-30",
+  "0169-4425-31",
+  "0169-4524-14",
+  "0310-6512-01",
+  "0480-3667-22",
+  "69097-910-55",
+  "70377-094-53",
+  "71288-563-84",
+  "0002-1457-80",
+  "0002-1495-80",
+  "0002-2460-80",
+  "0002-2506-80",
+  "0002-3533-11",
+  "0024-5761-05",
+  "0169-1709-30",
+  "0169-4060-12",
+  "0169-4136-02",
+  "0169-4307-13",
+  "0169-4404-31",
+  "0169-4501-14",
+  "0169-4525-14",
+  "0310-6524-01",
+  "0480-7250-46",
+  "69097-920-67",
+  "70377-095-53",
+  "71288-563-85",
+  "0002-1460-80",
+  "0002-1506-80",
+  "0002-2471-80",
+  "0002-3182-80",
+  "0002-3544-11",
+  "0143-9144-02",
+  "0169-1715-30",
+  "0169-4060-13",
+  "0169-4181-13",
+  "0169-4307-30",
+  "0169-4409-31",
+  "0169-4505-14",
+  "0169-4572-14",
+  "0310-6540-04",
+  "66780-210-07",
+  "69097-920-68",
+  "70748-346-02",
+  "72603-745-02"
+ ],
+ "res": {
+  "0002-1433-80": [
+   {
+    "spl_version": 62,
+    "published_date": "Aug 10, 2026",
+    "title": "TRULICITY (DULAGLUTIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "463050bd-2b1c-40f5-b3c3-0a04bb433309"
+   }
+  ],
+  "0002-1471-80": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "MOUNJARO (TIRZEPATIDE) INJECTION, SOLUTION MOUNJARO KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "d2d7da5d-ad07-4228-955f-cf7e355c8cc0"
+   }
+  ],
+  "0002-2236-80": [
+   {
+    "spl_version": 62,
+    "published_date": "Aug 10, 2026",
+    "title": "TRULICITY (DULAGLUTIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "463050bd-2b1c-40f5-b3c3-0a04bb433309"
+   }
+  ],
+  "0002-2484-80": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "487cd7e7-434c-4925-99fa-aa80b1cc776b"
+   }
+  ],
+  "0002-3511-11": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "487cd7e7-434c-4925-99fa-aa80b1cc776b"
+   }
+  ],
+  "0002-3555-11": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "487cd7e7-434c-4925-99fa-aa80b1cc776b"
+   }
+  ],
+  "0143-9144-03": [
+   {
+    "spl_version": 7,
+    "published_date": "Jun 11, 2026",
+    "title": "LIRAGLUTIDE INJECTION [HIKMA PHARMACEUTICALS USA INC.]",
+    "setid": "2100ec49-57b2-4330-ab5f-057ce9b7e4d0"
+   }
+  ],
+  "0169-2800-15": [
+   {
+    "spl_version": 22,
+    "published_date": "Jun 15, 2026",
+    "title": "SAXENDA (LIRAGLUTIDE) INJECTION, SOLUTION [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "3946d389-0926-4f77-a708-0acb8153b143"
+   }
+  ],
+  "0169-4130-13": [
+   {
+    "spl_version": 20,
+    "published_date": "Jun 10, 2026",
+    "title": "OZEMPIC (SEMAGLUTIDE) INJECTION, SOLUTION [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "adec4fd2-6858-4c99-91d4-531f5f2a2d79"
+   }
+  ],
+  "0169-4303-13": [
+   {
+    "spl_version": 14,
+    "published_date": "Aug 19, 2026",
+    "title": "OZEMPIC (ORAL SEMAGLUTIDE) TABLET RYBELSUS (ORAL SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "27f15fac-7d98-4114-a2ec-92494a91da98"
+   }
+  ],
+  "0169-4314-13": [
+   {
+    "spl_version": 14,
+    "published_date": "Aug 19, 2026",
+    "title": "OZEMPIC (ORAL SEMAGLUTIDE) TABLET RYBELSUS (ORAL SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "27f15fac-7d98-4114-a2ec-92494a91da98"
+   }
+  ],
+  "0169-4415-31": [
+   {
+    "spl_version": 19,
+    "published_date": "Jun 30, 2026",
+    "title": "WEGOVY (SEMAGLUTIDE) INJECTION, SOLUTION WEGOVY (SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "ee06186f-2aa3-4990-a760-757579d8f77b"
+   }
+  ],
+  "0169-4517-14": [
+   {
+    "spl_version": 19,
+    "published_date": "Jun 30, 2026",
+    "title": "WEGOVY (SEMAGLUTIDE) INJECTION, SOLUTION WEGOVY (SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "ee06186f-2aa3-4990-a760-757579d8f77b"
+   }
+  ],
+  "0169-4772-12": [
+   {
+    "spl_version": 20,
+    "published_date": "Jun 10, 2026",
+    "title": "OZEMPIC (SEMAGLUTIDE) INJECTION, SOLUTION [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "adec4fd2-6858-4c99-91d4-531f5f2a2d79"
+   }
+  ],
+  "0480-3667-20": [
+   {
+    "spl_version": 3,
+    "published_date": "Mar 02, 2026",
+    "title": "LIRAGLUTIDE INJECTION [TEVA PHARMACEUTICALS USA, INC.]",
+    "setid": "14bf9812-14ee-46ce-93b1-686e4906cbbc"
+   }
+  ],
+  "66780-212-01": [],
+  "70377-094-52": [
+   {
+    "spl_version": 12,
+    "published_date": "Apr 27, 2026",
+    "title": "LIRAGLUTIDE INJECTION [BIOCON PHARMA INC.]",
+    "setid": "cb032379-043b-443c-d552-b5d25f27f3c4"
+   }
+  ],
+  "70748-346-03": [
+   {
+    "spl_version": 10,
+    "published_date": "Nov 18, 2025",
+    "title": "LIRAGLUTIDE INJECTION [LUPIN PHARMACEUTICALS, INC.]",
+    "setid": "0450d8a2-a88e-4849-9788-ed4f5246f223"
+   }
+  ],
+  "72603-745-03": [
+   {
+    "spl_version": 4,
+    "published_date": "Jun 26, 2026",
+    "title": "LIRAGLUTIDE INJECTION [NORTHSTAR RX LLC]",
+    "setid": "4253be3b-bda6-4efd-8118-9c9538168a88"
+   }
+  ],
+  "0002-1434-80": [
+   {
+    "spl_version": 62,
+    "published_date": "Aug 10, 2026",
+    "title": "TRULICITY (DULAGLUTIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "463050bd-2b1c-40f5-b3c3-0a04bb433309"
+   }
+  ],
+  "0002-1484-80": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "MOUNJARO (TIRZEPATIDE) INJECTION, SOLUTION MOUNJARO KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "d2d7da5d-ad07-4228-955f-cf7e355c8cc0"
+   }
+  ],
+  "0002-2457-80": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "487cd7e7-434c-4925-99fa-aa80b1cc776b"
+   }
+  ],
+  "0002-2495-80": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "487cd7e7-434c-4925-99fa-aa80b1cc776b"
+   }
+  ],
+  "0002-3522-11": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "487cd7e7-434c-4925-99fa-aa80b1cc776b"
+   }
+  ],
+  "0002-3566-11": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "487cd7e7-434c-4925-99fa-aa80b1cc776b"
+   }
+  ],
+  "0169-1704-30": [
+   {
+    "spl_version": 14,
+    "published_date": "Aug 19, 2026",
+    "title": "OZEMPIC (ORAL SEMAGLUTIDE) TABLET RYBELSUS (ORAL SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "27f15fac-7d98-4114-a2ec-92494a91da98"
+   }
+  ],
+  "0169-2911-15": [
+   {
+    "spl_version": 14,
+    "published_date": "Nov 17, 2025",
+    "title": "XULTOPHY 100/3.6 (INSULIN DEGLUDEC AND LIRAGLUTIDE) INJECTION, SOLUTION [NOVO NORDISK]",
+    "setid": "21335fe4-d395-4501-ac2a-2f20d7520da9"
+   }
+  ],
+  "0169-4132-12": [
+   {
+    "spl_version": 20,
+    "published_date": "Jun 10, 2026",
+    "title": "OZEMPIC (SEMAGLUTIDE) INJECTION, SOLUTION [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "adec4fd2-6858-4c99-91d4-531f5f2a2d79"
+   }
+  ],
+  "0169-4303-30": [
+   {
+    "spl_version": 14,
+    "published_date": "Aug 19, 2026",
+    "title": "OZEMPIC (ORAL SEMAGLUTIDE) TABLET RYBELSUS (ORAL SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "27f15fac-7d98-4114-a2ec-92494a91da98"
+   }
+  ],
+  "0169-4314-30": [
+   {
+    "spl_version": 14,
+    "published_date": "Aug 19, 2026",
+    "title": "OZEMPIC (ORAL SEMAGLUTIDE) TABLET RYBELSUS (ORAL SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "27f15fac-7d98-4114-a2ec-92494a91da98"
+   }
+  ],
+  "0169-4425-31": [
+   {
+    "spl_version": 19,
+    "published_date": "Jun 30, 2026",
+    "title": "WEGOVY (SEMAGLUTIDE) INJECTION, SOLUTION WEGOVY (SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "ee06186f-2aa3-4990-a760-757579d8f77b"
+   }
+  ],
+  "0169-4524-14": [
+   {
+    "spl_version": 19,
+    "published_date": "Jun 30, 2026",
+    "title": "WEGOVY (SEMAGLUTIDE) INJECTION, SOLUTION WEGOVY (SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "ee06186f-2aa3-4990-a760-757579d8f77b"
+   }
+  ],
+  "0310-6512-01": [
+   {
+    "spl_version": 26,
+    "published_date": "Sep 08, 2025",
+    "title": "BYETTA (EXENATIDE) INJECTION [ASTRAZENECA PHARMACEUTICALS LP]",
+    "setid": "53d03c03-ebf7-418d-88a8-533eabd2ee4f"
+   }
+  ],
+  "0480-3667-22": [
+   {
+    "spl_version": 3,
+    "published_date": "Mar 02, 2026",
+    "title": "LIRAGLUTIDE INJECTION [TEVA PHARMACEUTICALS USA, INC.]",
+    "setid": "14bf9812-14ee-46ce-93b1-686e4906cbbc"
+   }
+  ],
+  "69097-910-55": [
+   {
+    "spl_version": 6,
+    "published_date": "Jul 14, 2026",
+    "title": "LIRAGLUTIDE INJECTION, SOLUTION [CIPLA USA INC.]",
+    "setid": "22c86976-9657-4dd0-8fff-0c3f3f08357c"
+   }
+  ],
+  "70377-094-53": [
+   {
+    "spl_version": 12,
+    "published_date": "Apr 27, 2026",
+    "title": "LIRAGLUTIDE INJECTION [BIOCON PHARMA INC.]",
+    "setid": "cb032379-043b-443c-d552-b5d25f27f3c4"
+   }
+  ],
+  "71288-563-84": [
+   {
+    "spl_version": 9,
+    "published_date": "Jul 28, 2026",
+    "title": "LIRAGLUTIDE INJECTION [MEITHEAL PHARMACEUTICALS INC.]",
+    "setid": "0efc3a89-211a-4496-baab-e8265e07de2b"
+   }
+  ],
+  "0002-1457-80": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "MOUNJARO (TIRZEPATIDE) INJECTION, SOLUTION MOUNJARO KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "d2d7da5d-ad07-4228-955f-cf7e355c8cc0"
+   }
+  ],
+  "0002-1495-80": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "MOUNJARO (TIRZEPATIDE) INJECTION, SOLUTION MOUNJARO KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "d2d7da5d-ad07-4228-955f-cf7e355c8cc0"
+   }
+  ],
+  "0002-2460-80": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "487cd7e7-434c-4925-99fa-aa80b1cc776b"
+   }
+  ],
+  "0002-2506-80": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "487cd7e7-434c-4925-99fa-aa80b1cc776b"
+   }
+  ],
+  "0002-3533-11": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "487cd7e7-434c-4925-99fa-aa80b1cc776b"
+   }
+  ],
+  "0024-5761-05": [
+   {
+    "spl_version": 25,
+    "published_date": "Mar 20, 2026",
+    "title": "SOLIQUA 100/33 (INSULIN GLARGINE AND LIXISENATIDE) INJECTION, SOLUTION [SANOFI-AVENTIS U.S. LLC]",
+    "setid": "4bba538b-cf7c-4310-ae8f-cb711ed21bcc"
+   }
+  ],
+  "0169-1709-30": [
+   {
+    "spl_version": 14,
+    "published_date": "Aug 19, 2026",
+    "title": "OZEMPIC (ORAL SEMAGLUTIDE) TABLET RYBELSUS (ORAL SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "27f15fac-7d98-4114-a2ec-92494a91da98"
+   }
+  ],
+  "0169-4060-12": [
+   {
+    "spl_version": 31,
+    "published_date": "Nov 17, 2025",
+    "title": "VICTOZA (LIRAGLUTIDE) INJECTION [NOVO NORDISK]",
+    "setid": "5a9ef4ea-c76a-4d34-a604-27c5b505f5a4"
+   }
+  ],
+  "0169-4136-02": [
+   {
+    "spl_version": 20,
+    "published_date": "Jun 10, 2026",
+    "title": "OZEMPIC (SEMAGLUTIDE) INJECTION, SOLUTION [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "adec4fd2-6858-4c99-91d4-531f5f2a2d79"
+   }
+  ],
+  "0169-4307-13": [
+   {
+    "spl_version": 14,
+    "published_date": "Aug 19, 2026",
+    "title": "OZEMPIC (ORAL SEMAGLUTIDE) TABLET RYBELSUS (ORAL SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "27f15fac-7d98-4114-a2ec-92494a91da98"
+   }
+  ],
+  "0169-4404-31": [
+   {
+    "spl_version": 19,
+    "published_date": "Jun 30, 2026",
+    "title": "WEGOVY (SEMAGLUTIDE) INJECTION, SOLUTION WEGOVY (SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "ee06186f-2aa3-4990-a760-757579d8f77b"
+   }
+  ],
+  "0169-4501-14": [
+   {
+    "spl_version": 19,
+    "published_date": "Jun 30, 2026",
+    "title": "WEGOVY (SEMAGLUTIDE) INJECTION, SOLUTION WEGOVY (SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "ee06186f-2aa3-4990-a760-757579d8f77b"
+   }
+  ],
+  "0169-4525-14": [
+   {
+    "spl_version": 19,
+    "published_date": "Jun 30, 2026",
+    "title": "WEGOVY (SEMAGLUTIDE) INJECTION, SOLUTION WEGOVY (SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "ee06186f-2aa3-4990-a760-757579d8f77b"
+   }
+  ],
+  "0310-6524-01": [
+   {
+    "spl_version": 26,
+    "published_date": "Sep 08, 2025",
+    "title": "BYETTA (EXENATIDE) INJECTION [ASTRAZENECA PHARMACEUTICALS LP]",
+    "setid": "53d03c03-ebf7-418d-88a8-533eabd2ee4f"
+   }
+  ],
+  "0480-7250-46": [
+   {
+    "spl_version": 4,
+    "published_date": "May 06, 2026",
+    "title": "LIRAGLUTIDE INJECTION, SOLUTION [TEVA PHARMACEUTICALS, INC.]",
+    "setid": "625ac780-70a9-41e4-a892-bcba0f803f1c"
+   }
+  ],
+  "69097-920-67": [
+   {
+    "spl_version": 3,
+    "published_date": "Oct 16, 2026",
+    "title": "LIRAGLUTIDE INJECTION, SOLUTION [CIPLA USA INC.]",
+    "setid": "8fe557ae-4ff0-47a2-8ec3-37bb0fbdcc64"
+   }
+  ],
+  "70377-095-53": [
+   {
+    "spl_version": 8,
+    "published_date": "Mar 30, 2026",
+    "title": "LIRAGLUTIDE INJECTION, SOLUTION [BIOCON PHARMA INC.]",
+    "setid": "0b898330-eca1-f60a-71d2-b91716e336ed"
+   }
+  ],
+  "71288-563-85": [
+   {
+    "spl_version": 9,
+    "published_date": "Jul 28, 2026",
+    "title": "LIRAGLUTIDE INJECTION [MEITHEAL PHARMACEUTICALS INC.]",
+    "setid": "0efc3a89-211a-4496-baab-e8265e07de2b"
+   }
+  ],
+  "0002-1460-80": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "MOUNJARO (TIRZEPATIDE) INJECTION, SOLUTION MOUNJARO KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "d2d7da5d-ad07-4228-955f-cf7e355c8cc0"
+   }
+  ],
+  "0002-1506-80": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "MOUNJARO (TIRZEPATIDE) INJECTION, SOLUTION MOUNJARO KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "d2d7da5d-ad07-4228-955f-cf7e355c8cc0"
+   }
+  ],
+  "0002-2471-80": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "487cd7e7-434c-4925-99fa-aa80b1cc776b"
+   }
+  ],
+  "0002-3182-80": [
+   {
+    "spl_version": 62,
+    "published_date": "Aug 10, 2026",
+    "title": "TRULICITY (DULAGLUTIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "463050bd-2b1c-40f5-b3c3-0a04bb433309"
+   }
+  ],
+  "0002-3544-11": [
+   {
+    "spl_version": 40,
+    "published_date": "Sep 02, 2026",
+    "title": "ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND (TIRZEPATIDE) INJECTION, SOLUTION ZEPBOUND KWIKPEN (TIRZEPATIDE) INJECTION, SOLUTION [ELI LILLY AND COMPANY]",
+    "setid": "487cd7e7-434c-4925-99fa-aa80b1cc776b"
+   }
+  ],
+  "0143-9144-02": [
+   {
+    "spl_version": 7,
+    "published_date": "Jun 11, 2026",
+    "title": "LIRAGLUTIDE INJECTION [HIKMA PHARMACEUTICALS USA INC.]",
+    "setid": "2100ec49-57b2-4330-ab5f-057ce9b7e4d0"
+   }
+  ],
+  "0169-1715-30": [
+   {
+    "spl_version": 14,
+    "published_date": "Aug 19, 2026",
+    "title": "OZEMPIC (ORAL SEMAGLUTIDE) TABLET RYBELSUS (ORAL SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "27f15fac-7d98-4114-a2ec-92494a91da98"
+   }
+  ],
+  "0169-4060-13": [
+   {
+    "spl_version": 31,
+    "published_date": "Nov 17, 2025",
+    "title": "VICTOZA (LIRAGLUTIDE) INJECTION [NOVO NORDISK]",
+    "setid": "5a9ef4ea-c76a-4d34-a604-27c5b505f5a4"
+   }
+  ],
+  "0169-4181-13": [
+   {
+    "spl_version": 20,
+    "published_date": "Jun 10, 2026",
+    "title": "OZEMPIC (SEMAGLUTIDE) INJECTION, SOLUTION [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "adec4fd2-6858-4c99-91d4-531f5f2a2d79"
+   }
+  ],
+  "0169-4307-30": [
+   {
+    "spl_version": 14,
+    "published_date": "Aug 19, 2026",
+    "title": "OZEMPIC (ORAL SEMAGLUTIDE) TABLET RYBELSUS (ORAL SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "27f15fac-7d98-4114-a2ec-92494a91da98"
+   }
+  ],
+  "0169-4409-31": [
+   {
+    "spl_version": 19,
+    "published_date": "Jun 30, 2026",
+    "title": "WEGOVY (SEMAGLUTIDE) INJECTION, SOLUTION WEGOVY (SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "ee06186f-2aa3-4990-a760-757579d8f77b"
+   }
+  ],
+  "0169-4505-14": [
+   {
+    "spl_version": 19,
+    "published_date": "Jun 30, 2026",
+    "title": "WEGOVY (SEMAGLUTIDE) INJECTION, SOLUTION WEGOVY (SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "ee06186f-2aa3-4990-a760-757579d8f77b"
+   }
+  ],
+  "0169-4572-14": [
+   {
+    "spl_version": 19,
+    "published_date": "Jun 30, 2026",
+    "title": "WEGOVY (SEMAGLUTIDE) INJECTION, SOLUTION WEGOVY (SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+    "setid": "ee06186f-2aa3-4990-a760-757579d8f77b"
+   }
+  ],
+  "0310-6540-04": [],
+  "66780-210-07": [],
+  "69097-920-68": [
+   {
+    "spl_version": 3,
+    "published_date": "Oct 16, 2026",
+    "title": "LIRAGLUTIDE INJECTION, SOLUTION [CIPLA USA INC.]",
+    "setid": "8fe557ae-4ff0-47a2-8ec3-37bb0fbdcc64"
+   }
+  ],
+  "70748-346-02": [
+   {
+    "spl_version": 10,
+    "published_date": "Nov 18, 2025",
+    "title": "LIRAGLUTIDE INJECTION [LUPIN PHARMACEUTICALS, INC.]",
+    "setid": "0450d8a2-a88e-4849-9788-ed4f5246f223"
+   }
+  ],
+  "72603-745-02": [
+   {
+    "spl_version": 4,
+    "published_date": "Jun 26, 2026",
+    "title": "LIRAGLUTIDE INJECTION [NORTHSTAR RX LLC]",
+    "setid": "4253be3b-bda6-4efd-8118-9c9538168a88"
+   }
+  ]
+ }
+}
