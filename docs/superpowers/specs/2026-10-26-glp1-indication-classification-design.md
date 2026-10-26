@@ -18,6 +18,32 @@
 - **Expected:** 1 `Unresolved` (Bydureon BCise) and 0 `Both`, based on the
   10-NDC feasibility sample.
 
+## Description to copy
+
+A methodology paragraph for the deliverable. It describes the work as
+completed, so finalize it only after this PR merges.
+
+> GLP-1 receptor agonist products were identified by National Drug Code (NDC).
+> Each NDC was looked up on NDCList (https://ndclist.com/pricing-lookup),
+> which reports the CMS National Average Drug Acquisition Cost (NADAC;
+> https://data.medicaid.gov/nadac) per unit, along with the package description
+> and labeler. NDCs without a direct pricing match were matched by product name
+> to other packages of the same product. Each package NDC was then classified
+> by its FDA-approved indication using the official product label on DailyMed
+> (https://dailymed.nlm.nih.gov/dailymed/), the National Library of Medicine's
+> repository of FDA labeling. Classification used Section 1 of the label
+> ("Indications and Usage"): products labeled for chronic weight management
+> were included, products labeled for type 2 diabetes (T2DM) were excluded, and
+> NDCs without a resolvable label were held for manual review. Secondary
+> indications, such as cardiovascular risk reduction, did not change the
+> classification. Products were classified at the brand and NDC level rather
+> than by active ingredient, because the same molecule (e.g., semaglutide,
+> tirzepatide, liraglutide) is marketed under separate T2DM and
+> weight-management brands.
+
+Optional sentence: "Each classification was independently re-derived and
+verified by a second reviewer."
+
 ## 1. Why
 
 The downstream GLP-1 analysis is restricted to weight-loss products and
@@ -118,9 +144,10 @@ The file has 211 rows: 68 distinct `input_ndc`, 56 distinct package `NDC`, and
 | 22 | `spl_set_id` | DailyMed label ID used for the classification. Blank if `Unresolved`. |
 | 23 | `label_effective_date` | Version date of the label used (YYYY-MM-DD). Blank if `Unresolved`. |
 
-**Inferred definitions.** There was no original spec for columns 6, 10 and 13,
-so these definitions come from the data and commit messages. They need
-owner confirmation.
+**Existing-column definitions** match the original data dictionary,
+`ndclist_pricing_results_data_dictionary.md`, from the 2026-10-07 pricing
+tasker. That dictionary describes the price as NADAC "per the script
+docstring", and `Price per Unit` is per pricing unit, not per package.
 
 **Reading the file.** Only 49 rows are exact input NDCs. If a pivot should count
 only the NDCs that appear in claims, filter on `is_input_ndc = True`.
@@ -285,6 +312,13 @@ The table is a reviewer oracle only. It must not go into worker prompts.
 | Execution uses a workflow with an orchestrator, Opus workers, an Opus adversarial reviewer, and a Codex review | Owner |
 
 ## 11. Open risks
+- **Target file pending owner decision.** A builder check found that the later
+  runs call `ndclist_pricing_results.csv` "the known-bad root CSV". It also
+  found that `pricing_results.csv` (73 NDCs, review PASS, blind-replicated) is
+  a superset of its 56 NDCs. The 17 extra NDCs are mostly generic liraglutide
+  and older Byetta packages. The owner must confirm which file receives the
+  columns before the run, because the answer changes §3, §4, §7 and the
+  manifest size.
 - **Codex inside the workflow.** It's unconfirmed whether `/codex:rescue` can
   be called from inside a workflow agent, so it is planned as a step in the
   main session after the workflow.
