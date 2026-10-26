@@ -121,6 +121,34 @@ The file has 73 rows, one per distinct package NDC. 49 of those NDCs are in the
 input NDC list and 24 are other packages found by product-name search. There
 are 14 distinct `Labeler` strings.
 
+### Final layout (owner change, 2026-10-26, after the run)
+
+At the owner's request, `pricing_results.csv` was reshaped after the run.
+`scripts/reorder_columns.py` did the reshape; values are unchanged.
+- **Dropped:** `application_number`, `spl_set_id` and `label_effective_date`.
+  They remain per NDC in
+  `indication_runs/run-20261026T1423Z/final_classifications.csv` for audit.
+- **Moved:** `product_name`, `Status`, `indication` and
+  `weight_loss_indicated` now sit next to `ndc_final`.
+
+| # | Column | Definition |
+|---|---|---|
+| 1 | `ndc` | Hyphenated package NDC as shown on ndclist (73 distinct, one row each). |
+| 2 | `ndc_final` | `ndc` as 11 digits with no hyphens, zero-padded to 5-4-2. This is the join key to the input NDC list and to claims. |
+| 3 | `product_name` | Product name as shown on ndclist, e.g. Trulicity, Liraglutide. Generics show only the molecule, so use `indication` to tell their T2DM and weight-loss versions apart. |
+| 4 | `Status` | ndclist package status: `ACTIVE` (68), or blank (5). |
+| 5 | `indication` | FDA-labeled indication from DailyMed label Section 1: `T2DM` (47) or `Weight loss` (26). `Both` and `Unresolved` are allowed values but did not occur. |
+| 6 | `weight_loss_indicated` | 1 = weight loss, 0 = T2DM, blank = `Both` or `Unresolved`. |
+| 7 | `match_flag` | 1 if `ndc_final` is in the input NDC list (49). 0 if it's another package of the same product, found by name search (24). |
+| 8 | `NDC Package Description` | ndclist package description. |
+| 9 | `Price per Unit` | NADAC price per pricing unit as text with a $ sign. It is not a package price. |
+| 10 | `Pricing Unit` | `ML` (60) or `EA` (13). |
+| 11 | `Effective Date` | NADAC price effective date (MM-DD-YYYY). |
+| 12 | `Labeler` | Manufacturer or labeler. Novo and Teva each appear under two spellings. |
+
+The tables below describe the file as the run assembled it, before this
+reshape.
+
 ### Existing columns (unchanged)
 
 | # | Column | Definition |
@@ -332,6 +360,7 @@ The sample did not cover:
 | The analysis strictly excludes T2DM, and the flag is 1/0 | Owner |
 | `Both` leaves the flag blank | Owner |
 | Target file is `pricing_results.csv`; `ndclist_pricing_results.csv` is archived | Owner |
+| After the run: drop the 3 label-source columns from the CSV and move `product_name`, `Status`, `indication`, `weight_loss_indicated` next to `ndc_final` (§4 final layout) | Owner |
 | Add `product_name`, taken from the ndclist name in the reviewed pricing run | Owner |
 | Execution uses a workflow with an orchestrator, Opus workers, an Opus adversarial reviewer, and a Codex review | Owner |
 | `Unresolved` leaves the flag blank (owner skipped the question, so this default was applied) | Claude |
