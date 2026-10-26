@@ -8,8 +8,9 @@
 
 ## TL;DR
 - **What:** keep `pricing_results.csv` at the root and archive the other
-  datasets. Add `indication` (T2DM / Weight loss / Both / Unresolved) and
-  `weight_loss_indicated` (1 / 0 / blank), plus 3 source columns.
+  datasets. Add `product_name`, `indication` (T2DM / Weight loss / Both /
+  Unresolved) and `weight_loss_indicated` (1 / 0 / blank), plus 3 source
+  columns.
 - **Source:** FDA label Section 1 on DailyMed, per package NDC. No Google, no
   memory, no brand-name guessing.
 - **How:** an orchestrator, 4 Opus DailyMed workers, a blind Opus adversarial
@@ -110,7 +111,7 @@ traceable.
   run (see §6.4)
 
 ### 3.3 Modified file
-- `pricing_results.csv`: five columns are appended (see §4). Nothing else
+- `pricing_results.csv`: six columns are appended (see §4). Nothing else
   changes. The file has no BOM and uses LF line endings, and it quotes a field
   only when the field contains a comma. All three properties must be preserved.
 
@@ -138,11 +139,21 @@ are 14 distinct `Labeler` strings.
 
 | # | Column | Definition |
 |---|---|---|
-| 10 | `indication` | Primary FDA-labeled indication from DailyMed label Section 1: `T2DM`, `Weight loss`, `Both`, or `Unresolved`. |
-| 11 | `weight_loss_indicated` | 1 = labeled for weight loss, 0 = labeled for T2DM, blank = `Both` or `Unresolved` (needs manual review). |
-| 12 | `application_number` | FDA approval number on the label (NDA/BLA/ANDA), e.g. NDA217806. Blank if `Unresolved`. |
-| 13 | `spl_set_id` | DailyMed label ID used for the classification. Blank if `Unresolved`. |
-| 14 | `label_effective_date` | Version date of the label used (YYYY-MM-DD). Blank if `Unresolved`. |
+| 10 | `product_name` | Product name as shown on ndclist, e.g. Trulicity, Mounjaro, Liraglutide. It comes from the reviewed pricing run (see the note below). Generics show only the molecule, so use `indication`, not this column, to tell the T2DM and weight-loss versions apart. |
+| 11 | `indication` | Primary FDA-labeled indication from DailyMed label Section 1: `T2DM`, `Weight loss`, `Both`, or `Unresolved`. |
+| 12 | `weight_loss_indicated` | 1 = labeled for weight loss, 0 = labeled for T2DM, blank = `Both` or `Unresolved` (needs manual review). |
+| 13 | `application_number` | FDA approval number on the label (NDA/BLA/ANDA), e.g. NDA217806. Blank if `Unresolved`. |
+| 14 | `spl_set_id` | DailyMed label ID used for the classification. Blank if `Unresolved`. |
+| 15 | `label_effective_date` | Version date of the label used (YYYY-MM-DD). Blank if `Unresolved`. |
+
+**How `product_name` is built** (deterministic script, no lookup):
+- Take `name_hidden_column` from
+  `archived/pricing_runs/run-20261013T1320Z/checkpoints/pass1/rows.csv` and
+  `pass2/rows.csv`, joined on `ndc`.
+- Strip the leading product-NDC prefix, so "0002-1433 - Trulicity" becomes
+  "Trulicity". Otherwise keep the site's capitalization.
+- Every one of the 73 NDCs has exactly one distinct name there, as checked on
+  2026-10-26. The script must assert that before writing.
 
 **Sources for the existing columns:**
 - `pricing_runs/run-20261013T1320Z/schema.md` (site schema)
@@ -229,8 +240,8 @@ The run is executed as a multi-agent workflow, which the owner has requested.
    the owner. Nothing is decided by majority vote. The CSV is not written
    until the owner has ruled on every listed NDC, so it never holds a
    placeholder value.
-6. **Assemble** (orchestrator, deterministic script): write the five columns
-   using the final classifications, then run the acceptance checks in §7.
+6. **Assemble** (orchestrator, deterministic script): write `product_name`
+   and the five classification columns, then run the acceptance checks in §7.
 7. **Publish.** Archive the superseded files, then commit and push everything
    to the PR branch in a single push. The owner merges.
 
@@ -258,7 +269,8 @@ The run passes only if all of these hold.
 - The final CSV has 73 rows in the original order. Columns 1–9 are
   byte-identical to the pre-change file, with no BOM, LF line endings, and the
   same quoting.
-- Each of the 73 NDCs has exactly one of the four `indication` values.
+- Each of the 73 NDCs has exactly one of the four `indication` values and a
+  non-blank `product_name`.
 - `weight_loss_indicated` follows the §5.8 mapping on every row.
 - Every non-`Unresolved` NDC has a non-blank `application_number`,
   `spl_set_id`, and `label_effective_date`, plus a saved SPL whose SHA-256
@@ -308,7 +320,7 @@ The sample did not cover:
 | 5 | Blind re-derivation and evidence audit | Opus reviewer | `reviewer_results.csv`, `review.md` |
 | 6 | Second adversarial review | Codex (`/codex:rescue`) | `codex_review.md` |
 | 7 | Decide disagreements and `Both`/`Unresolved` NDCs | Owner | `owner_decisions.csv` |
-| 8 | Write the 5 columns and run the §7 acceptance checks | Orchestrator (script) | Updated CSV, pass/fail |
+| 8 | Write the 6 columns and run the §7 acceptance checks | Orchestrator (script) | Updated CSV, pass/fail |
 | 9 | Archive `ndclist_pricing_results.csv`, `pricing_runs/` and `replication_runs/` with `git mv` | Orchestrator | Renames in git |
 | 10 | Commit and push the evidence, CSV, and archive moves in one push | Orchestrator | Updated PR |
 | 11 | Review and merge | Owner | Merged PR |
@@ -320,6 +332,7 @@ The sample did not cover:
 | The analysis strictly excludes T2DM, and the flag is 1/0 | Owner |
 | `Both` leaves the flag blank | Owner |
 | Target file is `pricing_results.csv`; `ndclist_pricing_results.csv` is archived | Owner |
+| Add `product_name`, taken from the ndclist name in the reviewed pricing run | Owner |
 | Execution uses a workflow with an orchestrator, Opus workers, an Opus adversarial reviewer, and a Codex review | Owner |
 | `Unresolved` leaves the flag blank (owner skipped the question, so this default was applied) | Claude |
 | Renamed "approved" to `weight_loss_indicated`, since every product is FDA-approved | Claude |
