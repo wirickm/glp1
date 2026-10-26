@@ -2,21 +2,22 @@
 
 - **Date:** 2026-10-26
 - **Owner:** Michael Wirick
-- **Status:** Approved by owner (2026-10-26)
-- **Target file:** `ndclist_pricing_results.csv` (repo root)
+- **Status:** Approved by owner (2026-10-26). Target file changed by the owner
+  on 2026-10-26 (see §10).
+- **Target file:** `pricing_results.csv` (repo root)
 
 ## TL;DR
-- **What:** keep `ndclist_pricing_results.csv` at the root and archive the
-  other datasets. Add `indication` (T2DM / Weight loss / Both / Unresolved)
-  and `weight_loss_indicated` (1 / 0 / blank), plus 3 source columns.
+- **What:** keep `pricing_results.csv` at the root and archive the other
+  datasets. Add `indication` (T2DM / Weight loss / Both / Unresolved) and
+  `weight_loss_indicated` (1 / 0 / blank), plus 3 source columns.
 - **Source:** FDA label Section 1 on DailyMed, per package NDC. No Google, no
   memory, no brand-name guessing.
 - **How:** an orchestrator, 4 Opus DailyMed workers, a blind Opus adversarial
   reviewer, and a Codex adversarial review (`/codex:rescue`).
-- **Safety:** `Both`/`Unresolved` stay blank for the owner. The 18 existing
-  columns and the 211 rows stay unchanged.
-- **Expected:** 1 `Unresolved` (Bydureon BCise) and 0 `Both`, based on the
-  10-NDC feasibility sample.
+- **Safety:** `Both`/`Unresolved` stay blank for the owner. The 9 existing
+  columns and the 73 rows stay unchanged.
+- **Expected:** 0 `Both`. The few NDCs that might come back `Unresolved` are
+  Bydureon BCise and the 2016 Amylin Byetta packages.
 
 ## Description to copy
 
@@ -58,17 +59,17 @@ remains at the root.
 ## 2. Goals, non-goals, anti-goals
 
 **Goals**
-- Classify every package NDC in `ndclist_pricing_results.csv` as `T2DM`,
+- Classify every package NDC in `pricing_results.csv` as `T2DM`,
   `Weight loss`, `Both`, or `Unresolved`, using the FDA label on DailyMed.
 - Add a strict inclusion flag, `weight_loss_indicated`, that the analysis can
   filter on directly.
 - Record the label each classification came from, so anyone can re-check it.
-- Leave only the final Claude dataset at the root and archive everything else.
+- Leave only the final dataset at the root and archive everything else.
 
 **Non-goals**
 - Re-running or changing the NADAC pricing lookup.
-- Filling pricing gaps. 19 input NDCs got only sibling-package rows from
-  ndclist, and Zepbound vials have no pricing row.
+- Filling pricing gaps, for example the 19 input NDCs that have no
+  exact-package pricing row.
 - Classifying why a patient took the drug. Off-label use, such as Ozempic for
   weight loss, needs diagnosis codes and is a separate analysis.
 
@@ -79,7 +80,7 @@ right.
 - A T2DM product with `weight_loss_indicated = 1`, or a weight-loss product
   with 0.
 - A `Both` or `Unresolved` NDC silently coded as 0 or 1.
-- Any change to the existing 18 columns, the row count, or the row order.
+- Any change to the existing 9 columns, the row count, or the row order.
 
 ## 3. Repository changes
 
@@ -88,12 +89,19 @@ Use `git mv` so file history is preserved. Files move without content changes.
 
 | From | To |
 |---|---|
-| `pricing_results.csv` | `archived/pricing_results.csv` |
+| `ndclist_pricing_results.csv` | `archived/ndclist_pricing_results.csv` |
 | `pricing_runs/` | `archived/pricing_runs/` |
 | `replication_runs/` | `archived/replication_runs/` |
 
-`ndclist_pricing_results.csv` stays at the root. It is the dataset created in
-commit `5307dd9`, the only commit in the repo carrying a Claude co-author line.
+`pricing_results.csv` stays at the root as the final dataset, for three
+reasons:
+- It comes from `pricing_runs/run-20261013T1320Z/`, which passed adversarial
+  review.
+- A blind names-only replication reproduced it exactly.
+- The later runs call `ndclist_pricing_results.csv` "the known-bad root CSV".
+
+The archived evidence folders stay intact, so the provenance remains
+traceable.
 
 ### 3.2 New files
 - `docs/superpowers/specs/2026-10-26-glp1-indication-classification-design.md`
@@ -102,61 +110,58 @@ commit `5307dd9`, the only commit in the repo carrying a Claude co-author line.
   run (see §6.4)
 
 ### 3.3 Modified file
-- `ndclist_pricing_results.csv`: five columns are appended (see §4). Nothing
-  else changes. The file keeps its UTF-8 BOM, LF line endings, and existing
-  quoting style.
+- `pricing_results.csv`: five columns are appended (see §4). Nothing else
+  changes. The file has no BOM and uses LF line endings, and it quotes a field
+  only when the field contains a comma. All three properties must be preserved.
 
-## 4. Data dictionary — final `ndclist_pricing_results.csv`
+## 4. Data dictionary — final `pricing_results.csv`
 
-The file has 211 rows: 68 distinct `input_ndc`, 56 distinct package `NDC`, and
-15 distinct `input_productname`.
+The file has 73 rows, one per distinct package NDC. 49 of those NDCs are in the
+input NDC list and 24 are other packages found by product-name search. There
+are 14 distinct `Labeler` strings.
 
 ### Existing columns (unchanged)
 
 | # | Column | Definition |
 |---|---|---|
-| 1 | `input_ndc` | 11-digit NDC from the GLP-1 input list that drove the lookup (68 distinct). |
-| 2 | `input_productname` | Product name from the input list for that NDC, e.g. ZEPBOUND (15 distinct). |
-| 3 | `Product` | ndclist product: product NDC plus brand, e.g. "0002-2506 - Zepbound". |
-| 4 | `NDC` | Hyphenated package NDC returned by ndclist (56 distinct). |
-| 5 | `NDC Package Description` | ndclist package description, e.g. "4 SYRINGE in 1 CARTON". |
-| 6 | `Price per Unit` | NADAC price per unit as text with a $ sign, e.g. "$526.11368". |
-| 7 | `Pricing Unit` | Unit the price applies to: `ML` (186 rows) or `EA` (25). |
-| 8 | `Effective Date` | NADAC price effective date (MM-DD-YYYY). |
-| 9 | `Labeler` | Manufacturer or labeler. Novo is spelled two ways. |
-| 10 | `Status` | ndclist package status: `ACTIVE`, or blank (6 rows). |
-| 11 | `lookup_type` | How the row was found: `ndc` (direct NDC search, 59 rows) or `productname` (name fallback after the NDC search failed, 152 rows). |
-| 12 | `lookup_term` | The exact NDC or product name that was searched. |
-| 13 | `match_status` | Lookup outcome. Always `found` in this file. |
-| 14 | `retrieved_at` | UTC timestamp of the lookup. |
-| 15 | `source_url` | ndclist URL the row was taken from. |
-| 16 | `ndc11` | `NDC` converted to 11-digit unhyphenated form, for joining to `input_ndc` and claims. |
-| 17 | `is_input_ndc` | `True` if `ndc11` equals `input_ndc` (49 rows). `False` means it's a sibling package of the same product (162 rows). |
-| 18 | `price_per_unit_num` | `Price per Unit` as a number. |
+| 1 | `ndc` | Hyphenated package NDC as shown on ndclist (73 distinct, one row each). |
+| 2 | `ndc_final` | `ndc` as 11 digits with no hyphens (segments zero-padded to 5-4-2). This is the join key to the input NDC list and to claims. |
+| 3 | `match_flag` | 1 if `ndc_final` is in the input NDC list (49 rows). 0 if it's another package of the same product, found by name search (24 rows). |
+| 4 | `NDC Package Description` | ndclist package description, e.g. "4 SYRINGE in 1 CARTON". |
+| 5 | `Price per Unit` | NADAC price per pricing unit as text with a $ sign, e.g. "$487.57264". It is not a package price. |
+| 6 | `Pricing Unit` | Unit the price applies to: `ML` (60 rows) or `EA` (13). |
+| 7 | `Effective Date` | NADAC price effective date (MM-DD-YYYY). |
+| 8 | `Labeler` | Manufacturer or labeler. Novo and Teva each appear under two spellings. |
+| 9 | `Status` | ndclist package status: `ACTIVE` (68), or blank (5) when the site showed none. |
 
 ### New columns
 
 | # | Column | Definition |
 |---|---|---|
-| 19 | `indication` | Primary FDA-labeled indication from DailyMed label Section 1: `T2DM`, `Weight loss`, `Both`, or `Unresolved`. |
-| 20 | `weight_loss_indicated` | 1 = labeled for weight loss, 0 = labeled for T2DM, blank = `Both` or `Unresolved` (needs manual review). |
-| 21 | `application_number` | FDA approval number on the label (NDA/BLA/ANDA), e.g. NDA217806. Blank if `Unresolved`. |
-| 22 | `spl_set_id` | DailyMed label ID used for the classification. Blank if `Unresolved`. |
-| 23 | `label_effective_date` | Version date of the label used (YYYY-MM-DD). Blank if `Unresolved`. |
+| 10 | `indication` | Primary FDA-labeled indication from DailyMed label Section 1: `T2DM`, `Weight loss`, `Both`, or `Unresolved`. |
+| 11 | `weight_loss_indicated` | 1 = labeled for weight loss, 0 = labeled for T2DM, blank = `Both` or `Unresolved` (needs manual review). |
+| 12 | `application_number` | FDA approval number on the label (NDA/BLA/ANDA), e.g. NDA217806. Blank if `Unresolved`. |
+| 13 | `spl_set_id` | DailyMed label ID used for the classification. Blank if `Unresolved`. |
+| 14 | `label_effective_date` | Version date of the label used (YYYY-MM-DD). Blank if `Unresolved`. |
 
-**Existing-column definitions** match the original data dictionary,
-`ndclist_pricing_results_data_dictionary.md`, from the 2026-10-07 pricing
-tasker. That dictionary describes the price as NADAC "per the script
-docstring", and `Price per Unit` is per pricing unit, not per package.
+**Sources for the existing columns:**
+- `pricing_runs/run-20261013T1320Z/schema.md` (site schema)
+- commit `913d170` (the NADAC pricing run)
+- commits `7bfef0e` and `917abba` (`ndc_final`, `match_flag`)
 
-**Reading the file.** Only 49 rows are exact input NDCs. If a pivot should count
-only the NDCs that appear in claims, filter on `is_input_ndc = True`.
+**Reading the file.** To count only the NDCs in the input list, which are the
+ones that appear in claims, filter on `match_flag = 1`.
 
 ## 5. Classification rules
 
 1. **Source of truth.** Use Section 1, "Indications and Usage" (LOINC
-   `34067-9`), of the current DailyMed SPL for the row's package `NDC`.
-2. **Lookup key.** Search with the hyphenated `NDC` column. DailyMed and
+   `34067-9`), of the DailyMed SPL for the row's package NDC.
+   - Prefer the current label version.
+   - If the package NDC appears only on an older version, which can happen
+     with discontinued packages, use the newest version that lists it. Record
+     that version's date in `label_effective_date` and note "archived label
+     version" in the evidence.
+2. **Lookup key.** Search with the hyphenated `ndc` column. DailyMed and
    openFDA do not accept the 11-digit unhyphenated form.
 3. **Lookup source.** DailyMed is the primary source. openFDA is a cross-check
    only, because its NDC search misses all Novo Ozempic injection and Wegovy
@@ -170,7 +175,7 @@ only the NDCs that appear in claims, filter on `is_input_ndc = True`.
      diabetes.
    - `Both`: Section 1 contains both a weight-management indication and a
      T2DM glycemic-control indication for this product.
-   - `Unresolved`: no SPL is found for the package NDC, or the Section 1 text
+   - `Unresolved`: no SPL version lists the package NDC, or the Section 1 text
      can't be mapped to one of the categories above.
 5. **Secondary indications** (CV risk reduction, OSA, MASH, CKD) don't change
    the category. T2DM mentioned only as a comorbidity in a weight-management
@@ -181,13 +186,15 @@ only the NDCs that appear in claims, filter on `is_input_ndc = True`.
    - The Wegovy SPL covers the injection (NDA215256) and the tablet
      (NDA218316).
    - The Rybelsus SPL also covers the Ozempic tablets (NDA213051).
-7. **Flag mapping:** `Weight loss` → 1, `T2DM` → 0, `Both` → blank,
+7. **Generic liraglutide.** Classify each generic from its own label. A generic
+   referencing Victoza is T2DM, and one referencing Saxenda is weight loss.
+   Never assume from the molecule.
+8. **Flag mapping:** `Weight loss` → 1, `T2DM` → 0, `Both` → blank,
    `Unresolved` → blank.
-8. **Grain.** Classify the 56 distinct package NDCs, then join the results onto
-   all 211 rows by `NDC`. Every row with the same `NDC` must get identical new
-   values.
-9. **No inference.** Don't classify from the brand, molecule, labeler, dose,
-   Google, or memory. If the label doesn't resolve, the NDC is `Unresolved`.
+9. **Grain.** One classification per row; each of the 73 rows is a distinct
+   package NDC.
+10. **No inference.** Don't classify from the brand, molecule, labeler, dose,
+    Google, or memory. If the label doesn't resolve, the NDC is `Unresolved`.
 
 ## 6. Execution: agent workflow
 
@@ -198,72 +205,77 @@ The run is executed as a multi-agent workflow, which the owner has requested.
 | Role | Model | Responsibility |
 |---|---|---|
 | Orchestrator | Main session | Builds the NDC manifest, dispatches workers, does all deterministic steps (join, write, checks, git), and routes disagreements to the owner. |
-| DailyMed workers (×4) | Opus | Each takes about 14 of the 56 NDCs. Looks each one up on DailyMed, saves evidence, and returns structured results (§6.3). |
-| Adversarial reviewer | Opus | Independently re-derives all 56 classifications blind, then diffs against the workers' results and audits the evidence. |
-| Second adversarial review | Codex, via `/codex:rescue` | Reviews the branch diff, the evidence folder, and the rules in this spec, looking for errors that both earlier passes missed. |
+| DailyMed workers (×4) | Opus | Each takes about 18 of the 73 NDCs. Looks each one up on DailyMed, saves evidence, and returns structured results (§6.3). |
+| Adversarial reviewer | Opus | Independently re-derives all 73 classifications blind, then diffs against the workers' results and audits the evidence. |
+| Second adversarial review | Codex, via `/codex:rescue` | Reviews the classifications, the evidence folder, and the rules in this spec, looking for errors that both earlier passes missed. |
 
 ### 6.2 Phases
-1. **Manifest** (orchestrator, deterministic): extract the 56 distinct
-   `NDC`/`Product`/`Labeler` combinations. Assert 211 rows and 56 NDCs.
+1. **Manifest** (orchestrator, deterministic): extract the 73
+   `ndc`/`Labeler`/`NDC Package Description` rows. Assert 73 rows and 73
+   distinct NDCs.
 2. **Lookup** (4 Opus workers in parallel). Worker prompts contain the NDC
    list and the §5 rules only. They don't contain the feasibility sample in §8,
    so each worker classifies blind.
-3. **Adversarial review** (Opus): blind re-derivation of all 56 NDCs, then:
+3. **Adversarial review** (Opus): blind re-derivation of all 73 NDCs, then:
    - a diff against the workers' results
    - a check that each quote supports its category
    - a check that the evidence hashes match
    - a check that no secondary indication leaked into the category
    - a verdict of PASS or FAIL with reasons
-4. **Assemble** (orchestrator, deterministic script): join the results onto
-   the 211 rows, write the five columns, and run the acceptance checks in §7.
-5. **Codex review** (`/codex:rescue`): adversarial review of the assembled
-   branch.
-6. **Reconcile.** Any disagreement between the workers, the reviewer, and Codex
-   is listed for the owner. The NDC stays blank until the owner decides; it is
-   never auto-resolved by majority vote.
-7. **Publish.** Commit and push to the PR branch. The owner merges.
+4. **Codex review** (`/codex:rescue`): adversarial review of the worker and
+   reviewer results and the evidence.
+5. **Reconcile.** The orchestrator lists every disagreement between the
+   workers, the reviewer, and Codex, plus every `Both`/`Unresolved` NDC, for
+   the owner. Nothing is decided by majority vote. The CSV is not written
+   until the owner has ruled on every listed NDC, so it never holds a
+   placeholder value.
+6. **Assemble** (orchestrator, deterministic script): write the five columns
+   using the final classifications, then run the acceptance checks in §7.
+7. **Publish.** Archive the superseded files, then commit and push everything
+   to the PR branch in a single push. The owner merges.
 
 ### 6.3 Worker output (per NDC)
 `ndc`, `spl_set_id`, `spl_version`, `label_effective_date`,
-`application_number`, `product_name_in_spl`, `section1_quote` (the sentence
-that drives the category), `secondary_indications`, `indication`,
-`lookup_url`, `spl_xml_sha256`, `notes`.
+`archived_version` (true/false), `application_number`, `product_name_in_spl`,
+`section1_quote` (the sentence that drives the category),
+`secondary_indications`, `indication`, `lookup_url`, `spl_xml_sha256`,
+`notes`.
 
 ### 6.4 Evidence folder: `indication_runs/run-<UTC timestamp>/`
-- `manifest.csv`: the 56 NDCs
+- `manifest.csv`: the 73 NDCs
 - `spl/<set_id>_v<version>.xml` and `spl/sha256.txt`: each unique label
   downloaded
 - `worker_results.csv` and `reviewer_results.csv`
 - `review.md`: the Opus adversarial review verdict
 - `codex_review.md`: the Codex review output
-- `unresolved.csv`: NDCs coded `Both` or `Unresolved`, with reasons
+- `owner_decisions.csv`: every NDC the owner ruled on, with the decision and
+  the reason
 - `scripts/`: the assemble and check scripts
 
 ## 7. Acceptance checks
 
 The run passes only if all of these hold.
-- The final CSV has 211 rows in the original order. Columns 1–18 are
-  byte-identical to the pre-change file, with the BOM and LF line endings
-  preserved.
-- All 56 NDCs have exactly one `indication`, and every row with the same `NDC`
-  has the same five new values.
-- `weight_loss_indicated` follows the §5.7 mapping on every row.
+- The final CSV has 73 rows in the original order. Columns 1–9 are
+  byte-identical to the pre-change file, with no BOM, LF line endings, and the
+  same quoting.
+- Each of the 73 NDCs has exactly one of the four `indication` values.
+- `weight_loss_indicated` follows the §5.8 mapping on every row.
 - Every non-`Unresolved` NDC has a non-blank `application_number`,
   `spl_set_id`, and `label_effective_date`, plus a saved SPL whose SHA-256
   matches `sha256.txt`.
-- The workers and the blind reviewer agree on every NDC, or the disagreements
-  are listed for the owner.
-- The Opus review verdict is PASS, and Codex review findings are resolved or
-  listed for the owner.
+- Every disagreement between the workers, the reviewer, and Codex has an entry
+  in `owner_decisions.csv`.
+- The Opus review verdict is PASS, and Codex findings are resolved or recorded
+  in `owner_decisions.csv`.
 - The archive moves are recorded as renames in git (`git diff -M --stat`).
 
 ## 8. Feasibility sample (2026-10-26, for reviewers only)
 
-A pre-design sample of 10 NDCs found:
-- DailyMed resolved 55 of the 56 package NDCs. The exception is Bydureon BCise
-  `0310-6540-04`, which was not found in either API, so it is expected to be
-  `Unresolved`.
-- No label in the file was `Both`.
+A pre-design sample of 10 NDCs, all of which are in `pricing_results.csv`,
+found:
+- DailyMed resolved every NDC tested except Bydureon BCise `0310-6540-04`,
+  which no current label in either API lists.
+- No label was `Both`.
 
 The table is a reviewer oracle only. It must not go into worker prompts.
 
@@ -278,24 +290,28 @@ The table is a reviewer oracle only. It must not go into worker prompts.
 | 0169-4303-30 | Rybelsus | NDA213051 | T2DM |
 | 0169-2800-15 | Saxenda | NDA206321 | Weight loss |
 | 0480-3667-22 | Liraglutide (Teva) | NDA022341 | T2DM |
-| 0310-6540-04 | Bydureon BCise | — | Unresolved |
+| 0310-6540-04 | Bydureon BCise | — | Unresolved on current labels; check archived versions (§5.1) |
+
+The sample did not cover:
+- the generic liraglutide labelers new to this file (Hikma, Cipla, Biocon,
+  Lupin, Meitheal, NorthStar, and Teva `0480-7250`)
+- the Amylin Byetta packages (`66780-210-07`, `66780-212-01`)
 
 ## 9. Task list
 
 | # | Task | Owner | Output |
 |---|---|---|---|
 | 1 | Approve this spec (done 2026-10-26) | Owner | Go/no-go |
-| 2 | Create the branch and open a PR with this spec | Orchestrator | PR link |
-| 3 | Archive `pricing_results.csv`, `pricing_runs/` and `replication_runs/` with `git mv` | Orchestrator | Renames in git |
-| 4 | Build the 56-NDC manifest and assert the counts | Orchestrator | `manifest.csv` |
-| 5 | Look up NDCs on DailyMed (4 parallel workers) | Opus workers | `worker_results.csv`, `spl/` |
-| 6 | Blind re-derivation and evidence audit | Opus reviewer | `reviewer_results.csv`, `review.md` |
-| 7 | Join the results onto 211 rows and write the 5 columns | Orchestrator (script) | Updated CSV |
-| 8 | Run the §7 acceptance checks | Orchestrator (script) | Pass/fail |
-| 9 | Second adversarial review | Codex (`/codex:rescue`) | `codex_review.md` |
-| 10 | Decide disagreements and `Both`/`Unresolved` NDCs | Owner | Decisions |
-| 11 | Commit and push the evidence, CSV, and archive moves | Orchestrator | Updated PR |
-| 12 | Review and merge | Owner | Merged PR |
+| 2 | Create the branch and open a PR with this spec (done, PR #3) | Orchestrator | PR link |
+| 3 | Build the 73-NDC manifest and assert the counts | Orchestrator | `manifest.csv` |
+| 4 | Look up NDCs on DailyMed (4 parallel workers) | Opus workers | `worker_results.csv`, `spl/` |
+| 5 | Blind re-derivation and evidence audit | Opus reviewer | `reviewer_results.csv`, `review.md` |
+| 6 | Second adversarial review | Codex (`/codex:rescue`) | `codex_review.md` |
+| 7 | Decide disagreements and `Both`/`Unresolved` NDCs | Owner | `owner_decisions.csv` |
+| 8 | Write the 5 columns and run the §7 acceptance checks | Orchestrator (script) | Updated CSV, pass/fail |
+| 9 | Archive `ndclist_pricing_results.csv`, `pricing_runs/` and `replication_runs/` with `git mv` | Orchestrator | Renames in git |
+| 10 | Commit and push the evidence, CSV, and archive moves in one push | Orchestrator | Updated PR |
+| 11 | Review and merge | Owner | Merged PR |
 
 ## 10. Decisions log
 
@@ -303,22 +319,17 @@ The table is a reviewer oracle only. It must not go into worker prompts.
 |---|---|
 | The analysis strictly excludes T2DM, and the flag is 1/0 | Owner |
 | `Both` leaves the flag blank | Owner |
+| Target file is `pricing_results.csv`; `ndclist_pricing_results.csv` is archived | Owner |
+| Execution uses a workflow with an orchestrator, Opus workers, an Opus adversarial reviewer, and a Codex review | Owner |
 | `Unresolved` leaves the flag blank (owner skipped the question, so this default was applied) | Claude |
 | Renamed "approved" to `weight_loss_indicated`, since every product is FDA-approved | Claude |
 | Added three source columns as an audit trail | Claude |
 | `replication_runs/` is archived along with `pricing_runs/` | Claude |
 | Evidence folder `indication_runs/` lives at the repo root | Claude |
-| Codex review runs after assembly, from the main session | Claude |
-| Execution uses a workflow with an orchestrator, Opus workers, an Opus adversarial reviewer, and a Codex review | Owner |
+| An NDC listed only on an older label version can be classified from the newest version that lists it | Claude |
+| Codex reviews before the CSV is written; owner rulings come before assembly; one push | Claude |
 
 ## 11. Open risks
-- **Target file pending owner decision.** A builder check found that the later
-  runs call `ndclist_pricing_results.csv` "the known-bad root CSV". It also
-  found that `pricing_results.csv` (73 NDCs, review PASS, blind-replicated) is
-  a superset of its 56 NDCs. The 17 extra NDCs are mostly generic liraglutide
-  and older Byetta packages. The owner must confirm which file receives the
-  columns before the run, because the answer changes §3, §4, §7 and the
-  manifest size.
 - **Codex inside the workflow.** It's unconfirmed whether `/codex:rescue` can
   be called from inside a workflow agent, so it is planned as a step in the
   main session after the workflow.
